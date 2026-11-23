@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#14241d" />
+  <meta name="description" content="Explore the Sebez Cafe menu, add your favourites to the cart, and arrange pickup or delivery in Addis Ababa." />
+  <title>Sebez Cafe | Order online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topline">Freshly prepared • Sebez Cafe • Addis Ababa</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Sebez Cafe home">
+      <img src="assets/sebez-logo.jpg" alt="Sebez Cafe S and coffee cup logo" />
+      <span class="brand-name">SEBEZ <b>CAFE</b></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="header-cart" id="headerCart" type="button" aria-label="Open cart">
+      <span>My order</span><span class="cart-count" id="headerCartCount">0</span>
+    </button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> GOOD FOOD, GOOD MOMENTS</div>
+        <h1>Your next favourite<br /><em>is on the menu.</em></h1>
+        <p>From breakfast and local favourites to fresh juice and wraps — explore the Sebez Cafe menu and build your order in a few taps.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#menu">Explore the menu <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#delivery">Delivery information</a>
+        </div>
+        <div class="hero-notes"><span>✦ Made to order</span><span>✦ Pickup available</span><span>✦ Delivery area: up to 10 km</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Sebez Cafe branding">
+        <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
+        <div class="hero-logo-card"><img src="assets/sebez-logo.jpg" alt="Sebez Cafe S and coffee cup logo" /></div>
+        <div class="hero-card card-top"><span class="card-icon">☕</span><span><b>A little break</b><small>Starts right here</small></span></div>
+        <div class="hero-card card-bottom"><span class="card-icon">✦</span><span><b>Made with care</b><small>Order your favourites</small></span></div>
+        <div class="hero-spark">✳</div>
+      </div>
+    </section>
+
+    <section class="quick-strip" aria-label="Cafe features">
+      <div><span class="quick-icon">☕</span><span><b>Something for every moment</b><small>Breakfast, drinks and meals</small></span></div>
+      <div><span class="quick-icon">⌖</span><span><b>Local delivery</b><small>Up to 10 km service area</small></span></div>
+      <div><span class="quick-icon">＋</span><span><b>Easy ordering</b><small>Choose, review and send</small></span></div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE SEBEZ MENU</div><h2>Find something <em>delicious.</em></h2><p>Choose a category, add items to your order, then review your basket.</p></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="menuSearch" type="search" placeholder="Search the menu" autocomplete="off" /><kbd>⌘ K</kbd></label>
+      </div>
+      <div class="menu-layout">
+        <div class="menu-main">
+          <div class="category-tabs" id="categoryTabs" aria-label="Menu categories"></div>
+          <div class="menu-meta"><span id="menuResultCount">Showing menu items</span><span>Prices in ETB</span></div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+          <div class="menu-note" id="menuNote"><span>ⓘ</span><p>Food photographs are real editorial images used as category examples. They may not show the exact Sebez Cafe serving. Several menu names are still temporary labels and must be checked against the current printed menu before launch.</p></div>
+        </div>
+        <aside class="cart-panel" id="cartPanel">
+          <div class="cart-heading"><div><div class="eyebrow">YOUR SELECTION</div><h3>Your order <span id="cartHeadingCount">(0)</span></h3></div><button class="text-button" id="clearCart" type="button">Clear</button></div>
+          <div id="cartItems" class="cart-items"><div class="empty-cart"><span>＋</span><b>Your cart is waiting</b><p>Add something tasty from the menu.</p></div></div>
+          <div class="cart-summary">
+            <div><span>Subtotal</span><b id="cartSubtotal">0 ETB</b></div>
+            <div class="cart-total"><span>Total before delivery</span><b id="cartTotal">0 ETB</b></div>
+            <p>Delivery fee is confirmed by the cafe after your address is checked.</p>
+            <button class="button button-primary checkout-button" id="checkoutButton" type="button" disabled>Continue to checkout <span>→</span></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="delivery-section" id="delivery">
+      <div class="section-wrap delivery-layout">
+        <div class="delivery-copy"><div class="eyebrow">DELIVERY THAT COMES TO YOU</div><h2>Close by? Let’s<br /><em>bring it over.</em></h2><p>Delivery is available only for customers within 10 km of Sebez Cafe. If you are farther than 10 km away, delivery service is unavailable in your area. Check your location before placing a delivery order.</p>
+          <div class="delivery-rules"><div><span class="rule-dot green"></span><span><b>0–10 km</b><small>Delivery service available</small></span></div><div><span class="rule-dot grey"></span><span><b>Over 10 km</b><small>Sorry, delivery service is unavailable in your area</small></span></div></div>
+          <p class="distance-caveat">The website checks straight-line GPS distance. The cafe should confirm the actual road route and delivery fee.</p>
+        </div>
+        <div class="location-card">
+          <div class="location-top"><div class="location-pin">⌖</div><div><b>Sebez Cafe</b><small>Hani Super Market area, Akaki Kality, Addis Ababa</small></div></div>
+          <div class="map-frame"><iframe title="Sebez Cafe location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=8.895024,38.773635&z=14&output=embed"></iframe></div>
+          <div class="location-bottom"><span>Check your delivery distance</span><button id="checkLocation" class="button button-dark" type="button">Use my location</button></div>
+          <div id="distanceResult" class="distance-result" role="status">Your location is only used to estimate the distance from the cafe.</div>
+          <a class="map-link" href="https://maps.app.goo.gl/t1kzy3wXZgYxMfP86" target="_blank" rel="noopener">Open cafe in Google Maps ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="about-mark">S<span>✳</span></div>
+      <div><div class="eyebrow">A WARM WELCOME AT SEBEZ</div><h2>A place for good <em>food & good company.</em></h2><p>Welcome to Sebez Cafe. Browse the menu, choose what you love, and send your order directly to the cafe. For pickup or delivery, the team will confirm availability and your final total.</p></div>
+      <a class="button button-outline" href="#menu">Browse the menu ↗</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-brand">SEBEZ <b>CAFE</b></div><p>Good food. Easy ordering.</p><div class="footer-links"><a href="#menu">Menu</a><a href="#delivery">Delivery</a><a href="https://maps.app.goo.gl/t1kzy3wXZgYxMfP86" target="_blank" rel="noopener">Find us</a></div><small>© <span id="year"></span> Sebez Cafe. All rights reserved.</small></footer>
+
+  <button id="mobileCartButton" class="mobile-cart-button" type="button"><span>View order</span><span id="mobileCartCount">0 items</span><b id="mobileCartTotal">0 ETB</b></button>
+
+  <div class="modal-backdrop" id="checkoutModal" aria-hidden="true">
+    <div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close checkout">×</button>
+      <div class="eyebrow">ALMOST THERE</div><h2 id="checkoutTitle">Where should we send it?</h2><p class="modal-intro">Add your contact details. The cafe will confirm delivery, timing and the final fee with you.</p>
+      <form id="checkoutForm">
+        <div class="form-grid"><label>Full name<input name="customerName" required placeholder="Your name" /></label><label>Phone number<input name="customerPhone" required type="tel" placeholder="09… or +251…" /></label></div>
+        <label>Order type<select name="orderType" id="orderType"><option value="delivery">Delivery</option><option value="pickup">Pickup at the cafe</option></select></label>
+        <label>Delivery address / area<textarea name="address" id="deliveryAddress" rows="2" placeholder="Sub-city, area, street and house number"></textarea></label>
+        <label>Nearby landmark <input name="landmark" placeholder="A nearby shop, school or landmark" /></label>
+        <label>Extra notes <textarea name="notes" rows="2" placeholder="Anything the cafe should know? (optional)"></textarea></label>
+        <div class="checkout-distance" id="checkoutDistance">Check your GPS location before choosing delivery. Delivery is available only within 10 km.</div>
+        <div class="modal-total"><span>Items subtotal</span><b id="modalSubtotal">0 ETB</b></div>
+        <button class="button button-primary modal-submit" type="submit">Send order to Sebez Cafe <span>↗</span></button>
+        <p class="privacy-note">No online payment is taken on this page. Your order is sent to the cafe for confirmation.</p>
+      </form>
+      <div id="orderFallback" class="order-fallback" hidden><p id="fallbackText"></p><button id="copyOrder" class="button button-dark" type="button">Copy order summary</button></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
